@@ -11,6 +11,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Some useful pointers
 
+### A tutorial
+
+Krieg, M. L. (2001). A tutorial on Bayesian belief networks (No. DSTO–TN–0403). Edinburgh, South Australia, Australia.
+
+
+## Using a R package
+
+bnlearn
+
 
 ## R Markdown
 
