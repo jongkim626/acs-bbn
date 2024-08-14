@@ -2,7 +2,9 @@
 title: "Summary of Bayesian Beliefs Networks"
 author: "Jong Kim"
 date: "2024-08-13"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
