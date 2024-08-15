@@ -17,31 +17,42 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Krieg, M. L. (2001). A tutorial on Bayesian belief networks (No. DSTO–TN–0403). Edinburgh, South Australia, Australia.
 
+## YouTube
+Percy Liang
+
 
 # Using a R package, bnlearn
 
-Let's test an example by Jacinto Arias, <https://jacintoarias.github.io/bayesnetRtutorial/#>
+For more information on bnlearn, please visit here, <https://www.bnlearn.com/documentation/>
+
+There is a trial example by Jacinto Arias, <https://jacintoarias.github.io/bayesnetRtutorial/#>
+
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 library(tidyverse)
 library(lubridate)
 library(bnlearn)
-
 ```
 
-## Data Structures
+## Data structures
 
-The usage of bnlearn revolves around the usage of two main **data structures** to represent a Bayesian Network in different stages (NOTE that these are *S3* classes and the names might overlap with other functions):
+There are two main **data structures** to represent a Bayesian Network. 
 
-* `bn` [[Docs]](http://www.bnlearn.com/documentation/man/bn.class.html). Represents the structural information, variables, graph and learning algorithm if provided.
-* `bn.fit` [[Docs]](http://www.bnlearn.com/documentation/man/bn.fit.class.html). Adds the parametric information on top of the previous structure. Contains the distribution of each node according to its type and parent configuration.
+* The bn class structures: learning, nodes, arcs
+<https://www.bnlearn.com/documentation/man/bn.class.html>
+
+* The bn.fit class structure
+- it is a list of elements corresponding to the nodes of the Bayesian network. 
+<https://www.bnlearn.com/documentation/man/bn.fit.class.html>
+
+* bn.kcv
+
+* bn.strength
 
 
 ## Creating the structure of Bayesian networks
 
-There are different ways to manually initialize and modify the graph of a Bayesian Network.
-
-We can create empty graphs from a set of variables:
+There are different ways to manually initialize and modify the graph of a Bayesian Network. We can create empty graphs from a set of variables:
 
 ```{r}
 vars <- LETTERS[1:6]
@@ -50,9 +61,7 @@ dag  <- empty.graph(vars)
 dag
 ```
 
-You can specify arcs sets in various ways. The most common are:
-
-As a two column (`from`, `to`) matrix, setting them via `arcs` to an existing network:
+Specify the arc sets. As a two column (`from`, `to`) matrix, setting them via `arcs` to an existing network:
 
 ```{r}
 e <- matrix(
@@ -64,9 +73,13 @@ e <- matrix(
 arcs(dag) <- e
 
 dag
+
+plot(dag)
+
 ```
 
-We can also use an adjancecy matrix, and assign it to a dag with `amat`:
+
+# Use an adjancecy matrix, and assign it to a dag with `amat`:
 
 ```{r}
 adj <- matrix(
@@ -86,33 +99,30 @@ print(adj)
 amat(dag) <- adj
 
 dag
+plot(dag)
+
 ```
 
-The last option is to create a *formula* for a given set of variables. Each node is specified by a pair of brackets `[<var_name>]`. If the node has a parentset we denote it by `|` and specify the list of parents separated by colons `:`. We can compute the formula into a `bn` object with `model2network`.
+The last option is to create a *formula* for a given set of variables. Each node is specified by a pair of brackets `[<var_name>]`. If the node has a parent set we denote it by `|` and specify the list of parents separated by colons `:`. We can compute the formula into a `bn` object with `model2network`.
 
 ```{r}
 dag <- model2network("[A][C][B|A][D|C][F|A:B:C][E|F]")
 dag
-```
+plot(dag)
 
-The package provide other capabilities such as **random graphs** and **graph sampling**. In addition there is a range of utilities to manipulate the graphs [[Link]](http://www.bnlearn.com/documentation/man/mb.html) [[Link]](http://www.bnlearn.com/documentation/man/graph.html).
+```
 
 
 ## Plotting graphs
-
-We can ploting graphs using the built in R engine by using `plot` for the `bn` class:
 
 ```{r}
 plot(dag)
 ```
 
-Minimal aspects of the plot can be customized as documented in the corresponding help page. Other packages can be used indrectly to plot graphs, `bnlearn` provides connections with some of them but be aware that some of them might be outdated.
 
-Fortunatelly, graphs are a common data structure and we can find lots of utilities to work with them. One of the most common visualization tools for graphs, and for data in general, is the D3 library from the *Javascript* domain. Thanks to the integration of **R shiny** with web technologies we can find wonderful ports such as the `networkD3` package.
+the `networkD3` package
 
-The next snippet is just a custom function to transform a `bn` object to the required information to plot a *D3 force graph*.
 
-*Please install* the `networkD3`, be carefull as this package is currently under beta development and future version could break this code.
 
 ```{r}
 plotD3bn <- function(bn) {
@@ -151,20 +161,11 @@ plotD3bn(dag)
 ```
 
 
-## Loading Bayesian networks from files
+##
+## Exploring Bayesian Network Repository
+##
 
-There are different file formats to represent a Bayesian network. They have originated over the years as an effort to create standards or as part of particular propietary systems. Despite the effort there is not a consensuated closed standard, perhaps the closest one is the `xbif` format [[Link]](http://www.cs.cmu.edu/~fgcozman/Research/InterchangeFormat/).
-
-`bnlearn` provides several ways to load BNs from different formats [[Docs]](http://www.bnlearn.com/documentation/man/foreign.html). You should use them when importing and exporting to other systems or to share them with other people, if you plan to use just bnlearn you could just save an `rda` file.
-
-
-## The Bayes net repository
-
-The maintainers of `bnlearn` also provide a modern R-focused repository for a series of popular Bayesian networks that have been used extensivelly for benchmarking on the literature.
-
-http://www.bnlearn.com/bnrepository/
-
-In here you can find networks with different properties that can be use to test algorithms or explore this or other BN packages. We will now work with the so popular `asia` network: *Asia* is for BNs what *"iris"* is for statistics.
+There is a repository, <https://www.bnlearn.com/bnrepository/>. 
 
 ```{r}
 # This downloads the RData file from the repository and loads it.
@@ -176,7 +177,7 @@ asia <- bn
 
 ## Discrete networks
 
-We will know explore the contents of this variable. As you can see, this not only contains the structure but the parameters as well, but first we will take a look at the structure:
+Take a look at the structure: 
 
 ```{r}
 bn.net(asia)
@@ -186,7 +187,7 @@ bn.net(asia)
 plotD3bn(asia)
 ```
 
-Now is the time to review the parameters, this prints each node and the asociated probability table. In this case all variables are **discrete** so the tables would be conditional probability tables.
+the parameters, this prints each node and the associated probability table. In this case all variables are **discrete** so the tables would be conditional probability tables.
 
 ```{r}
 asia
@@ -198,7 +199,7 @@ We can access individual nodes of the net as in a data.frame:
 asia$smoke
 ```
 
-There is also a function to plot the distributions of discrete networks:
+a function to plot the distributions of discrete networks:
 
 ```{r}
 bn.fit.barchart(asia$smoke)
@@ -209,9 +210,9 @@ bn.fit.barchart(asia$dysp)
 ```
 
 
-## Introducing expert knowledge
+## Change the probability tables 
 
-We can alter the probability tables of a BN, this is useful to override parameters learnt from data or not observed variables. This method allows us to include expert information from the domain of the problem modelled.
+Modify the probability tables of a BN, this is useful to override parameters learnt from data or not observed variables. This method allows us to include expert information from the domain of the problem modelled.
 
 To modify a **conditional probability table** you can just directly replace the existing table in the model by extracting it with `coef`. Be careful to maintain the inherent restrictions of the probability distribution.
 
@@ -221,6 +222,9 @@ cpt[] <- c(0.2, 0.8)
 asia$smoke <- cpt
 asia$smoke
 ```
+##
+## Aug 15 - JWK 
+##
 
 
 ## Sampling data from a Bayesian network

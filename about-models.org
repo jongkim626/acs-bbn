@@ -1,0 +1,54 @@
+#+title: Using a LLM model in Emacs
+#+author: Jong W. Kim
+
+* Ellama
+
+Ellama (Emacs Large LAnguage models from Emacs)  is a tool to interact with LLMs from Emacs. In Emacs environment, users can ask questions and get responses from the model.
+
+** What benefist can we get from Emacs interfaces?
+
+** Install 
+
+Details can be found:  https://github.com/s-kostyaev/ellama
+
+** Install Ollama
+https://github.com/ollama/ollama?tab=readme-ov-file
+
+
+** Ollama on Emacs with Ellama
+
+Setting up Ollama as a server and Ellama as an Emacs client, leading to a localized AI-driven LLMs with rich experiences of Emacs.
+
+Install gemma2 model, with 2B parameters size (1.6GB)
+
+*** About Ellama commands
+https://github.com/s-kostyaev/ellama/blob/main/README.org
+
+
+* Test
+
+
+M-x shell
+
+ollama pull zephyr
+
+
+M-x ellama-chat
+
+I asked why is sky blue?
+
+
+** User:
+why is sky blue? 
+
+** Ellama:
+The color of the sky appears to be blue due to a phenomenon called scattering. The Earth's
+atmosphere is filled with small gas molecules like nitrogen and oxygen, which scatter light. When
+sunlight enters the Earth's atmosphere, it encounters these gas molecules. Since blue light has a
+shorter wavelength than other colors of visible light, it gets scattered more than other colors by
+the gas molecules in the atmosphere. This is why the sky appears blue to us. The same reason makes
+the sun appear reddish during sunrise and sunset when most of the blue light is scattered away,
+leaving behind the longer wavelengths of red, orange, and yellow light.
+
+
+
