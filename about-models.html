@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-08-15 Thu 14:35 -->
+<!-- 2024-08-15 Thu 15:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Using a LLM model in Emacs</title>
@@ -201,42 +201,42 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgdd76b4a">1. Ellama</a>
+<li><a href="#org285cec5">1. Ellama</a>
 <ul>
-<li><a href="#org64800b9">1.1. What benefist can we get from Emacs interfaces?</a></li>
-<li><a href="#orgee85824">1.2. Install</a></li>
-<li><a href="#orga4bcfc9">1.3. Install Ollama</a></li>
-<li><a href="#org00da767">1.4. Ollama on Emacs with Ellama</a>
+<li><a href="#org1866498">1.1. What benefist can we get from Emacs interfaces?</a></li>
+<li><a href="#org776571e">1.2. Install</a></li>
+<li><a href="#org0b01c95">1.3. Install Ollama</a></li>
+<li><a href="#orgfe6e856">1.4. Ollama on Emacs with Ellama</a>
 <ul>
-<li><a href="#org2b17bfd">1.4.1. About Ellama commands</a></li>
+<li><a href="#orgd8fde91">1.4.1. About Ellama commands</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgaec6145">2. Test</a>
+<li><a href="#orgce05fe4">2. Test</a>
 <ul>
-<li><a href="#orgdda1685">2.1. User:</a></li>
-<li><a href="#org6114d2c">2.2. Ellama:</a></li>
+<li><a href="#orgcd0ef67">2.1. User:</a></li>
+<li><a href="#orgbb1790b">2.2. Ellama:</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgdd76b4a" class="outline-2">
-<h2 id="orgdd76b4a"><span class="section-number-2">1.</span> Ellama</h2>
+<div id="outline-container-org285cec5" class="outline-2">
+<h2 id="org285cec5"><span class="section-number-2">1.</span> Ellama</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Ellama (Emacs Large LAnguage models from Emacs)  is a tool to interact with LLMs from Emacs. In Emacs environment, users can ask questions and get responses from the model.
 </p>
 </div>
 
-<div id="outline-container-org64800b9" class="outline-3">
-<h3 id="org64800b9"><span class="section-number-3">1.1.</span> What benefist can we get from Emacs interfaces?</h3>
+<div id="outline-container-org1866498" class="outline-3">
+<h3 id="org1866498"><span class="section-number-3">1.1.</span> What benefist can we get from Emacs interfaces?</h3>
 </div>
 
-<div id="outline-container-orgee85824" class="outline-3">
-<h3 id="orgee85824"><span class="section-number-3">1.2.</span> Install</h3>
+<div id="outline-container-org776571e" class="outline-3">
+<h3 id="org776571e"><span class="section-number-3">1.2.</span> Install</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Details can be found:  <a href="https://github.com/s-kostyaev/ellama">https://github.com/s-kostyaev/ellama</a>
@@ -244,8 +244,8 @@ Details can be found:  <a href="https://github.com/s-kostyaev/ellama">https://gi
 </div>
 </div>
 
-<div id="outline-container-orga4bcfc9" class="outline-3">
-<h3 id="orga4bcfc9"><span class="section-number-3">1.3.</span> Install Ollama</h3>
+<div id="outline-container-org0b01c95" class="outline-3">
+<h3 id="org0b01c95"><span class="section-number-3">1.3.</span> Install Ollama</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 <a href="https://github.com/ollama/ollama?tab=readme-ov-file">https://github.com/ollama/ollama?tab=readme-ov-file</a>
@@ -254,8 +254,8 @@ Details can be found:  <a href="https://github.com/s-kostyaev/ellama">https://gi
 </div>
 
 
-<div id="outline-container-org00da767" class="outline-3">
-<h3 id="org00da767"><span class="section-number-3">1.4.</span> Ollama on Emacs with Ellama</h3>
+<div id="outline-container-orgfe6e856" class="outline-3">
+<h3 id="orgfe6e856"><span class="section-number-3">1.4.</span> Ollama on Emacs with Ellama</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Setting up Ollama as a server and Ellama as an Emacs client, leading to a localized AI-driven LLMs with rich experiences of Emacs.
@@ -266,8 +266,8 @@ Install gemma2 model, with 2B parameters size (1.6GB)
 </p>
 </div>
 
-<div id="outline-container-org2b17bfd" class="outline-4">
-<h4 id="org2b17bfd"><span class="section-number-4">1.4.1.</span> About Ellama commands</h4>
+<div id="outline-container-orgd8fde91" class="outline-4">
+<h4 id="orgd8fde91"><span class="section-number-4">1.4.1.</span> About Ellama commands</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <p>
 <a href="https://github.com/s-kostyaev/ellama/blob/main/README.org">https://github.com/s-kostyaev/ellama/blob/main/README.org</a>
@@ -278,30 +278,34 @@ Install gemma2 model, with 2B parameters size (1.6GB)
 </div>
 
 
-<div id="outline-container-orgaec6145" class="outline-2">
-<h2 id="orgaec6145"><span class="section-number-2">2.</span> Test</h2>
+<div id="outline-container-orgce05fe4" class="outline-2">
+<h2 id="orgce05fe4"><span class="section-number-2">2.</span> Test</h2>
 <div class="outline-text-2" id="text-2">
-<p>
+<pre class="example">
+
 M-x shell
-</p>
 
-<p>
 ollama pull zephyr
-</p>
 
 
-<p>
 M-x ellama-chat
-</p>
+
+I asked why is sky blue?
+
+</pre>
 
 <p>
-I asked why is sky blue?
+Here is an example output.
+</p>
+
+
+<p>
+#+begin<sub>src</sub>
 </p>
 </div>
 
-
-<div id="outline-container-orgdda1685" class="outline-3">
-<h3 id="orgdda1685"><span class="section-number-3">2.1.</span> User:</h3>
+<div id="outline-container-orgcd0ef67" class="outline-3">
+<h3 id="orgcd0ef67"><span class="section-number-3">2.1.</span> User:</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 why is sky blue? 
@@ -309,8 +313,8 @@ why is sky blue?
 </div>
 </div>
 
-<div id="outline-container-org6114d2c" class="outline-3">
-<h3 id="org6114d2c"><span class="section-number-3">2.2.</span> Ellama:</h3>
+<div id="outline-container-orgbb1790b" class="outline-3">
+<h3 id="orgbb1790b"><span class="section-number-3">2.2.</span> Ellama:</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 The color of the sky appears to be blue due to a phenomenon called scattering. The Earth's
@@ -321,13 +325,17 @@ the gas molecules in the atmosphere. This is why the sky appears blue to us. The
 the sun appear reddish during sunrise and sunset when most of the blue light is scattered away,
 leaving behind the longer wavelengths of red, orange, and yellow light.
 </p>
+
+<p>
+#+end<sub>scr</sub>
+</p>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Jong W. Kim</p>
-<p class="date">Created: 2024-08-15 Thu 14:35</p>
+<p class="date">Created: 2024-08-15 Thu 15:03</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

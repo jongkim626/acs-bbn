@@ -7,12 +7,16 @@ Ellama (Emacs Large LAnguage models from Emacs)  is a tool to interact with LLMs
 
 ** What benefist can we get from Emacs interfaces?
 
-** Install 
+** Install Ellama
 
-Details can be found:  https://github.com/s-kostyaev/ellama
+If you don't have installed and not been using Emacs, you can do homebrew to install Emacs or Aquamacs.
 
-** Install Ollama
-https://github.com/ollama/ollama?tab=readme-ov-file
+In Emacs, you now need to install Ellama. Details can be found [[https://github.com/s-kostyaev/ellama][here]].  
+
+
+** Checking out a LLM model from Ollama
+
+Ollama provides a platform to work with large language models (LLMs). Details can be found here, [[https://github.com/ollama/ollama?tab=readme-ov-file][Ollama Websites]].  
 
 
 ** Ollama on Emacs with Ellama
@@ -28,6 +32,8 @@ https://github.com/s-kostyaev/ellama/blob/main/README.org
 * Test
 
 
+#+begin_src
+
 M-x shell
 
 ollama pull zephyr
@@ -37,6 +43,12 @@ M-x ellama-chat
 
 I asked why is sky blue?
 
+#+end_src
+
+Here is an example output.
+
+
+#+begin_src
 
 ** User:
 why is sky blue? 
@@ -50,5 +62,4 @@ the gas molecules in the atmosphere. This is why the sky appears blue to us. The
 the sun appear reddish during sunrise and sunset when most of the blue light is scattered away,
 leaving behind the longer wavelengths of red, orange, and yellow light.
 
-
-
+#+end_scr
