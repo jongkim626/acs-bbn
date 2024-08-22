@@ -23,7 +23,7 @@ If we ask the Llama to tell us a secret, what would they tell us? Initially, the
 
 Here is the resonse from the model.
 
-[[file:/Users/jongkim/work/projects/acs-bbn/images/ellama-tell-me-secrets.png]]
+[[file:/../images/ellama-tell-me-secrets.png]]
 
 
 ** Loading documents into the model
