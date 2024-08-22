@@ -5,7 +5,12 @@
 
 Ellama (Emacs Large LAnguage models from Emacs)  is a tool to interact with LLMs from Emacs. In Emacs environment, users can ask questions and get responses from the model.
 
-** What benefist can we get from Emacs interfaces?
+** What benefits can we get from Emacs interfaces?
+
+** Install Emacs
+
+You can try using Homebrew. Details can be found [[https://formulae.brew.sh/formula/emacs][here]].  
+
 
 ** Install Ellama
 
